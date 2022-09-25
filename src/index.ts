@@ -38,5 +38,5 @@ ScrollTrigger.create({
   end: () => "+=" + height2,
   trigger: "#container",
   scrub: true,
-  pin: !true
+  pin: true
 });
