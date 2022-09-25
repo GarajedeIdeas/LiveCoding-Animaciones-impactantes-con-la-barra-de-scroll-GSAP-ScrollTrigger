@@ -1,0 +1,35 @@
+@import url(reset.css);
+
+html {
+  --s: 100px;
+  /* control the size */
+
+  --_g: #0000 90deg, #00000022 0;
+  background: conic-gradient(from 90deg at 2px 2px, var(--_g)) 0 0 / var(--s) var(--s),
+    conic-gradient(from 90deg at 1px 1px, var(--_g)) 0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
+}
+
+#container .box {
+  margin-bottom: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: green;
+
+  &.a {
+    top: 20vh;
+  }
+
+  &.b {
+    top: 120vh;
+    background-color: red;
+  }
+
+  &.c {
+    top: 180vh;
+    background-color: blue;
+  }
+}
