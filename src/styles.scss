@@ -35,7 +35,7 @@ html {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: green;
+  background-color: brown;
   top: 0;
   left: 0;
 
@@ -46,7 +46,7 @@ html {
 
   &.b {
     // top: 150vh;
-    background-color: red;
+    background-color: white;
     z-index: 50;
   }
 
