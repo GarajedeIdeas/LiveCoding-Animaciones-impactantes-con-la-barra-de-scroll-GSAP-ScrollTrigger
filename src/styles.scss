@@ -5,31 +5,54 @@ html {
   /* control the size */
 
   --_g: #0000 90deg, #00000022 0;
-  background: conic-gradient(from 90deg at 2px 2px, var(--_g)) 0 0 / var(--s) var(--s),
-    conic-gradient(from 90deg at 1px 1px, var(--_g)) 0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
+  background: conic-gradient(
+        from 90deg at 2px 2px,
+        var(--_g)
+      )
+      0 0 / var(--s) var(--s),
+    conic-gradient(
+        from 90deg at 1px 1px,
+        var(--_g)
+      )
+      0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
+}
+
+#container {
+  width: 100vh;
+  height: 100vh;
+  // overflow: hidden;
 }
 
 #container .box {
   margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
 }
 
 .box {
-  width: 100px;
-  height: 100px;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   background-color: green;
+  top: 0;
+  left: 0;
 
   &.a {
-    top: 20vh;
+    // left: -100%;
+    z-index: 100;
   }
 
   &.b {
-    top: 120vh;
+    // top: 150vh;
     background-color: red;
+    z-index: 50;
   }
 
   &.c {
-    top: 180vh;
+    // top: 180vh;
     background-color: blue;
+    z-index: 20;
   }
 }
