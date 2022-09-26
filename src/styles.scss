@@ -17,30 +17,39 @@ html {
       0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
 }
 
+// html,
+// body {
+//   margin: 0;
+//   padding: 0;
+//   overflow: hidden;
+// }
+
 #container {
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   // overflow: hidden;
+  // overflow-y: scroll;
+  // overflow-y: scroll;
+  // scroll-snap-type: y mandatory;
+  outline: 1px solid green;
 }
 
 #container .box {
-  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  position: absolute;
 }
 
 .box {
+  font-size: 50px;
+  // scroll-snap-align: start;
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  background-color: brown;
-  top: 0;
-  left: 0;
 
   &.a {
     // left: -100%;
+    background-color: red;
     z-index: 100;
   }
 
