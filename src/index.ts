@@ -1,44 +1,46 @@
 import "./styles.scss";
 
-import { Power4, gsap } from "gsap";
-
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const tl = gsap
   .timeline()
-  .timeScale(8)
-  .addLabel("l1")
+  // .timeScale(10)
+  .addLabel("p1")
   .to(".box.a", {
     xPercent: 100,
-    duration: 5
+    duration: 0.1
+    // delay: 2
   })
-  .addLabel("l2")
+  .addLabel("p2")
+  .to(["a", "b", "c"], {
+    xPercent: 120,
+    duration: 0.1,
+    transform: "skew(15deg)"
+  })
   .to(".box.b", {
-    yPercent: 100,
-    rotation: 20,
-    duration: 15,
-    ease: Power4.easeOut
+    xPercent: 100,
+    duration: 0.1,
+    transform: "skew(0)"
   })
-  .to(".box.b", {
-    opacity: 0,
-    duration: 5
-  })
-  .addLabel("l3")
+  .addLabel("p3")
   .to(".box.c", {
-    backgroundColor: "orange",
-    duration: 15
+    background: "#fabada",
+    duration: 0.2
+  })
+  .to(".box.c", {
+    filter: "drop-shadow(30px 10px 4px #4444dd)",
+    transform: "scale(0)",
+    rotation: 360 * 1,
+    duration: 0.2
   });
 
-tl.seek("l2");
-
 ScrollTrigger.create({
-  // markers: true,
-  animation: tl,
   trigger: "#container",
-  start: "top top",
-  end: "+=50000",
+  end: "+=8000%",
+  animation: tl,
   pin: true,
   scrub: true
 });

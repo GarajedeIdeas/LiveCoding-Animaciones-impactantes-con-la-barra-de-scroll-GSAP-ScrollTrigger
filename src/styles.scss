@@ -17,51 +17,31 @@ html {
       0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
 }
 
-// html,
-// body {
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-// }
+// #container {}
 
-#container {
-  width: 100vw;
+.box {
   height: 100vh;
-  // overflow: hidden;
-  // overflow-y: scroll;
-  // overflow-y: scroll;
-  // scroll-snap-type: y mandatory;
-  outline: 1px solid green;
-}
-
-#container .box {
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 200px;
   position: absolute;
-}
-
-.box {
-  font-size: 50px;
-  // scroll-snap-align: start;
-  width: 100vw;
-  height: 100vh;
+  left: 0;
+  top: 0;
 
   &.a {
-    // left: -100%;
-    background-color: red;
-    z-index: 100;
+    background: green;
+    z-index: 1000;
   }
 
   &.b {
-    // top: 150vh;
-    background-color: white;
-    z-index: 50;
+    background: blue;
+    z-index: 900;
   }
 
   &.c {
-    // top: 180vh;
-    background-color: blue;
-    z-index: 20;
+    background: orange;
+    z-index: 800;
   }
 }
