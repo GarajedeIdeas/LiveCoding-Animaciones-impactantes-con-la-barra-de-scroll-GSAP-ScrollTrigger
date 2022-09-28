@@ -17,7 +17,7 @@ function randomInt(min: number, max: number) {
 }
 
 const { body } = document;
-const padding = 110;
+const padding = 100;
 
 for (
   let x = 0;
@@ -33,7 +33,7 @@ for (
     sqDOMEl.classList.add("box");
 
     gsap.set(sqDOMEl, {
-      scale: 1, //randomFloat(0.15, 1),
+      scale: randomFloat(1, 1),
       x,
       y
     });
@@ -48,22 +48,25 @@ boxes.forEach((box: any, index) =>
   gsap.set(box, {
     background: () => {
       const hsl = (boxes.length / index) * 360;
-      return "hsl(" + hsl + ", 100%, 50%)";
+      // return "hsl(" + hsl + ", 100%, 50%)";
+      return "rgba(0,0,0,1)";
     }
   })
 );
 
 gsap.to(".box", {
-  delay: 0.2,
+  delay: Math.random() * 2,
   duration: 5,
   rotation: 180,
-  ease: Elastic.easeOut,
-  background: "red",
+  scale: 0,
   stagger: {
-    // repeat: -1,
-    // yoyo: true,
-    amount: 4,
-    from: "edges",
-    grid: "auto"
+    from: "random",
+    amount: 1.5
   }
+  // scale: 0.2,
+  // opacity: 0,
+  // ease: Elastic.easeOut
+  // background: "red",
+  // repeat: -1,
+  // yoyo: true
 });
