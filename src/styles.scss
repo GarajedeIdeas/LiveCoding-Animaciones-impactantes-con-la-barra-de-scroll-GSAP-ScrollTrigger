@@ -1,23 +1,29 @@
 @import url(reset.css);
 
 html {
-  --s: 100px;
-  /* control the size */
+  font-family: "Oswald", sans-serif;
+  background: black;
 
-  --_g: #0000 90deg, #00000022 0;
-  background: conic-gradient(
-        from 90deg at 2px 2px,
-        var(--_g)
-      )
-      0 0 / var(--s) var(--s),
-    conic-gradient(
-        from 90deg at 1px 1px,
-        var(--_g)
-      )
-      0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
+  // --s: 100px;
+  // /* control the size */
+
+  // --_g: #0000 90deg, #00000022 0;
+  // background: conic-gradient(
+  //       from 90deg at 2px 2px,
+  //       var(--_g)
+  //     )
+  //     0 0 / var(--s) var(--s),
+  //   conic-gradient(
+  //       from 90deg at 1px 1px,
+  //       var(--_g)
+  //     )
+  //     0 0 / calc(var(--s) / 5) calc(var(--s) / 5);
 }
 
-// #container {}
+#container {
+  height: 100vh;
+  width: 100vw;
+}
 
 .box {
   height: 100vh;
@@ -29,19 +35,23 @@ html {
   position: absolute;
   left: 0;
   top: 0;
+  background-color: black;
 
   &.a {
-    background: green;
     z-index: 1000;
   }
 
   &.b {
-    background: blue;
     z-index: 900;
   }
 
   &.c {
-    background: orange;
     z-index: 800;
   }
+}
+
+.box img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
 }

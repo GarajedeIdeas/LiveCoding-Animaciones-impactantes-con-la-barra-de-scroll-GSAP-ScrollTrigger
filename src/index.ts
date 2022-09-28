@@ -1,46 +1,44 @@
 import "./styles.scss";
 
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { Elastic } from "gsap/all";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const t1 = gsap.to(".box.b", {
+  opacity: 0.5,
+  duration: 1,
+  onReverseComplete: () => {
+    if (Math.random() > 0.5) {
+      t1.resetTo("opacity", 0);
+    } else {
+      t1.resetTo("opacity", 1);
+    }
+  }
+});
+
 const tl = gsap
   .timeline()
-  // .timeScale(10)
-  .addLabel("p1")
   .to(".box.a", {
-    xPercent: 100,
-    duration: 0.1
-    // delay: 2
+    top: "-100vh",
+    delay: 1,
+    duration: 1
   })
-  .addLabel("p2")
-  .to(["a", "b", "c"], {
-    xPercent: 120,
-    duration: 0.1,
-    transform: "skew(15deg)"
-  })
-  .to(".box.b", {
-    xPercent: 100,
-    duration: 0.1,
-    transform: "skew(0)"
-  })
-  .addLabel("p3")
+  .add(t1)
   .to(".box.c", {
-    background: "#fabada",
-    duration: 0.2
-  })
-  .to(".box.c", {
-    filter: "drop-shadow(30px 10px 4px #4444dd)",
-    transform: "scale(0)",
-    rotation: 360 * 1,
-    duration: 0.2
+    // yPercent: 100,
+
+    opacity: 0,
+    // ease: Elastic.easeIn,
+    duration: 1
   });
 
 ScrollTrigger.create({
-  trigger: "#container",
-  end: "+=8000%",
   animation: tl,
+  trigger: "#container",
+  start: "top top",
+  end: `+=${1205 * 5}`,
   pin: true,
   scrub: true
 });
