@@ -1,41 +1,29 @@
-# canvas-base
+# GSAP / Scrolltrigger
 
-Empty project.
+## Por Dani Vicario
 
-## Building and running on localhost
+### ¿Necesitas formación en programación creativa, live codings, tienes dudas con el código? https://www.linkedin.com/in/danivicario/
 
-First install dependencies:
+Sígueme en Github
+https://github.com/danivicario
 
-```sh
-npm install
-```
+Mis videos de arte generativo
+https://www.youtube.com/user/danigarciavicario
 
-To create a production build:
+Mis fotos de flores
+https://www.flickr.com/photos/danivicario
 
-```sh
-npm run build-prod
-```
+Obras generativas en Behance
+https://www.behance.net/danivicario
 
-To create a development build:
+---
 
-```sh
-npm run build-dev
-```
+## [Visita el Workshop](https://www.youtube.com/watch?v=v41ZYbaL294&t=5064s&ab_channel=GarajedeIdeas)
 
-## Running
+Enlace a la presentación: https://docs.google.com/presentation/d/1bltsq-_Q-bknPbr-Z8N0TQacthf4dSuC9I4fPllc5IY/edit?usp=sharing
 
-```sh
-node dist/bundle.js
-```
+Para instalar el proyecto, ejecuta `npm` en la carpeta raiz del proyecto y luego `npm start`
 
-## Testing
+Puedes visitar los archivos del proyecto en `http://localhost:9000/`
 
-To run unit tests:
-
-```sh
-npm test
-```
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
+¡Muchas gracias!
